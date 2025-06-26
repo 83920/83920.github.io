@@ -28,8 +28,8 @@ const draw = gpu.make_frag_prog(gl, `
 let itr = 0; const loop = () => { itr += 1; window.requestAnimationFrame(loop);
   gl.useProgram(draw); gl.viewport(0, 0, ...dim);
   gl.uniform2f(gl.getUniformLocation(draw, 'dim'), ...dim);
-  //gl.uniform2f(gl.getUniformLocation(draw, 'mouse'), mx, my);
-  gl.uniform2f(gl.getUniformLocation(draw, 'mouse'), 1.03, .47);
+  gl.uniform2f(gl.getUniformLocation(draw, 'mouse'), mx, my);
+  //gl.uniform2f(gl.getUniformLocation(draw, 'mouse'), 1.03, .47);
   gl.uniform1i(gl.getUniformLocation(draw, 'itr'), itr);
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 }; loop();
